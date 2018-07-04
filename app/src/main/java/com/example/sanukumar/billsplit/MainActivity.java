@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         int j;
 
-        String s2 = "new hobby ";
+        String s2 = "new hobby of mine";
 
     }
 }
