@@ -17,5 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
         String s2 = "new hobby ";
 
+
+        String w="djsls";
+
     }
 }
