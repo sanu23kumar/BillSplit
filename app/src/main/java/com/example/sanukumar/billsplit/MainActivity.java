@@ -13,5 +13,7 @@ public class MainActivity extends AppCompatActivity {
         String s = "I've updated something here";
         int i = 2;
 
+        String a="hello";
+
     }
 }
