@@ -6,6 +6,6 @@ package com.example.sanukumar.billsplit;
 
 public class GoogleSignIn {
 
-
+    String a = "Trying to merge this into master branch";
 
 }
