@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    final int DELAY = 1000;
+    final int DELAY = 300; //delay before starting the home screen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent appMainActivity = new Intent(MainActivity.this, HomeScreenActivityActivity.class);
+                startActivity(appMainActivity);
+                finish();
             }
         }, DELAY);
 
