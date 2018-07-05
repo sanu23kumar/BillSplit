@@ -19,7 +19,8 @@
 
         <activity
             android:name=".HomeScreenActivityActivity"
-            android:label="@string/title_activity_home_screen_activity"
+            android:icon="@drawable/wallet"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
