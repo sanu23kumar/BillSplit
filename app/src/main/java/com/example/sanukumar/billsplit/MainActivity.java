@@ -10,15 +10,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String s = "I've updated something here";
-        int i = 2;
-
-        int j;
-
-        String s2 = "new hobby ";
-
-
-        String w="djsls";
-
     }
 }
