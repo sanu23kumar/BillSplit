@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.sanukumar.billsplit.MainActivity"
     android:orientation="vertical"
-    android:background="@color/background">
+    android:background="@android:color/white">
 
     <Space
         android:layout_width="match_parent"
@@ -24,12 +24,13 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bill_split_logo"/>
+        android:src="@drawable/bill_split_black"/>
     
     <ImageView
         android:layout_weight="1"
+        android:paddingRight="10dp"
         android:layout_gravity="right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/creators_label"/>
+        android:src="@drawable/creators_black"/>
 </LinearLayout>
