@@ -82,7 +82,7 @@ public class login extends AppCompatActivity {
 
     private void updateUI(FirebaseUser currentUser) {
         Toast.makeText(login.this,"You Are logged in",Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(login.this, HomeScreenActivityActivity.class));
+        startActivity(new Intent(login.this, Fingerprint.class));
         finish();
     }
 
@@ -126,7 +126,7 @@ public class login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            Intent i=new Intent(login.this,HomeScreenActivityActivity.class);
+                            Intent i=new Intent(login.this,Fingerprint.class);
                             startActivity(i);
                             finish();
                             NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(login.this, "default")
