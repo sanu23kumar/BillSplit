@@ -6,25 +6,34 @@
     android:layout_height="match_parent"
     tools:context="com.example.sanukumar.billsplit.MainActivity"
     android:orientation="vertical"
-    android:background="@android:color/white">
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="100dp" />
-    <ImageView
-        android:layout_weight="5"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/wallet"/>
+    android:background="@color/colorPrimary">
 
     <ImageView
         android:layout_weight="4"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="60dp"
+        android:src="@drawable/bill_split"/>
+    <ImageView
+        android:layout_weight="5"
+        android:layout_gravity="center"
+        android:layout_marginTop="-20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/wallet"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bill_split_black"/>
+        android:layout_marginTop="20dp"
+        android:src="@drawable/slogan"
+        android:layout_marginLeft="86dp"/>
+
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
     
     <ImageView
         android:layout_weight="1"
@@ -32,5 +41,5 @@
         android:layout_gravity="right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/creators_black"/>
+        android:src="@drawable/creators"/>
 </LinearLayout>

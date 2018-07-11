@@ -12,43 +12,67 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
+
+        <LinearLayout
+            android:id="@+id/addExpenseLayout"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="2dp"
-            android:elevation="4dp"
-            app:cardBackgroundColor="#6e6e6e">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:layout_marginTop="-220dp"
+            android:background="@color/colorPrimary">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:gravity="center">
+            <TextView
+                style="@style/TextField"
+                android:id="@+id/addProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Article Name"/>
+            <TextView
+                style="@style/TextField"
+                android:id="@+id/addCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Cost"/>
+            <TextView
+                style="@style/TextField"
+                android:id="@+id/addDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Date"/>
+            <TextView
+                style="@style/TextField"
+                android:id="@+id/addFriends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Add Friends"/>
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/add_sign"
-                    android:layout_gravity="center"/>
+            <ImageButton
+                android:id="@+id/addCostCancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_expense_cancel_button"
+                android:layout_margin="20dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24dp"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="#fff"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Add Expense"/>
-            </LinearLayout>
+            <ImageButton
+                android:id="@+id/addCostButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-66dp"
+                android:src="@drawable/add_expense_button"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"/>
 
-        </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/expensesList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="-5dp">
+            android:layout_height="match_parent">
 
         </android.support.v7.widget.RecyclerView>
 

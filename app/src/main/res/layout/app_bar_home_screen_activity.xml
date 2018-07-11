@@ -9,13 +9,14 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <LinearLayout
@@ -23,28 +24,17 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:paddingBottom="8dp"
-                android:paddingTop="8dp">
+                android:paddingTop="8dp"
+                android:paddingRight="10dp">
+
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:paddingRight="10dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/wallet_outline" />
-
-                <TextView
                     android:layout_weight="2"
                     android:gravity="center"
                     android:id="@+id/homeScreenTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:textColor="@color/textColour"
-                    android:text="Add expense"/>
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:paddingLeft="10dp"
-                    android:layout_height="wrap_content"/>
+                    android:src="@drawable/add_expense_title"/>
 
             </LinearLayout>
 
