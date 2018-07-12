@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -28,7 +30,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class login extends AppCompatActivity {
 
-    private SignInButton gmail;
+    private Button gmail;
 
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInClient mGoogleSignInClient;
@@ -46,10 +48,7 @@ public class login extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         getmAuth=FirebaseAuth.getInstance();
 
-        gmail = (SignInButton) findViewById(R.id.login11);
-
-
-
+        gmail = findViewById(R.id.login11);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
