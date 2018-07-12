@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "104360910260",
+    "firebase_url": "https://billsplit-53e47.firebaseio.com",
+    "project_id": "billsplit-53e47",
+    "storage_bucket": "billsplit-53e47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104360910260:android:8ad866ec45eff57e",
+        "android_client_info": {
+          "package_name": "com.example.sanukumar.billsplit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104360910260-cko8g76ji9l2l2vqemes0vo4dga1p3qc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sanukumar.billsplit",
+            "certificate_hash": "ef85f5e1e3bd640a39566efabf228bca3b647439"
+          }
+        },
+        {
+          "client_id": "104360910260-sd3ta79hmj3tcj1ee41g4v3i0b7tedcu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxYiVmTnE0q2ahEZtzgC6WDCVwXEdJgmA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104360910260-sd3ta79hmj3tcj1ee41g4v3i0b7tedcu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

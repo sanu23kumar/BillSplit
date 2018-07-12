@@ -70,8 +70,6 @@ public class HomeScreenActivityActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
-
             return true;
         }
 
@@ -86,9 +84,6 @@ public class HomeScreenActivityActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-
-
-
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
