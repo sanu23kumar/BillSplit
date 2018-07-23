@@ -16,23 +16,22 @@
         android:id="@+id/navDrawerImageView"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/bill_split" />
+        android:paddingTop="@dimen/nav_header_vertical_spacing" />
 
     <TextView
         android:id="@+id/navDrawerTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Android Studio"
-        android:textColor="#000"
+        android:text="Sanu Kumar"
+        android:textColor="#fff"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:id="@+id/navDrawerSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:text="android.studio@android.com" />
+        android:textColor="#fff"
+        android:text="sanu23kumar@gmail.com" />
 
 </LinearLayout>

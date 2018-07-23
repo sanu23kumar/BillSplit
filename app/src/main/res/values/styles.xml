@@ -18,12 +18,12 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-    <style name="TextField" parent="Widget.AppCompat.EditText">
-        <item name="android:textColor">@android:color/white</item>
+    <style name="emptyText" parent="Widget.AppCompat.EditText">
         <item name="android:background">@drawable/form_text_field</item>
+        <item name="android:textColor">@android:color/white</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:paddingLeft">10dp</item>
-        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_margin">5dp</item>z
         <item name="android:textSize">16dp</item>
         <item name="android:fontFamily">sans-serif-light</item>
     </style>

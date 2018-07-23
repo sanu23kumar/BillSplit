@@ -3,6 +3,7 @@ package com.example.sanukumar.billsplit;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -22,6 +23,8 @@ public class HomeScreenActivityActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     ImageView homeScreenTitle;
+    public static boolean displayedAddExpenseForTheFirstTime = true;
+    TabLayout statisticsTab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,49 @@ public class HomeScreenActivityActivity extends AppCompatActivity
         setContentView(R.layout.home_screen_activity);
 
         homeScreenTitle = findViewById(R.id.homeScreenTitle);
+        homeScreenTitle.setImageDrawable(getDrawable(R.drawable.add_expense_title));
+
+        statisticsTab = findViewById(R.id.statsTab);
+
+        statisticsTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                FragmentManager fragmentManager =  getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                if (tab.getPosition() == 0){
+
+                    fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+                    fragmentTransaction.replace(R.id.fragmentHome, new statisticsFragment());
+                    fragmentTransaction.commit();
+
+                } else if (tab.getPosition() == 1) {
+
+                    fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+                    fragmentTransaction.replace(R.id.fragmentHome, new statisticsFriends());
+                    fragmentTransaction.commit();
+
+                } else if (tab.getPosition() == 2) {
+
+                    fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+                    fragmentTransaction.replace(R.id.fragmentHome, new statisticsSummary());
+                    fragmentTransaction.commit();
+
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,6 +88,9 @@ public class HomeScreenActivityActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        navigationView.getMenu().getItem(0).setChecked(true);
+        statisticsTab.setVisibility(View.GONE);
     }
 
     @Override
@@ -76,23 +125,46 @@ public class HomeScreenActivityActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        FragmentManager fragmentManager =  getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.nav_addExpense) {
 
-        } else if (id == R.id.nav_manage) {
+            statisticsTab.setVisibility(View.GONE);
 
-        } else if (id == R.id.nav_share) {
+            fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+            fragmentTransaction.replace(R.id.fragmentHome, new addExpenseFragment());
+            fragmentTransaction.commit();
+            homeScreenTitle.setImageDrawable(getDrawable(R.drawable.add_expense_title));
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_addFriends) {
+
+            statisticsTab.setVisibility(View.GONE);
+
+            fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+            fragmentTransaction.replace(R.id.fragmentHome, new AddFriendFragment());
+            fragmentTransaction.commit();
+            homeScreenTitle.setImageDrawable(getDrawable(R.drawable.add_friend_title));
+
+        } else if (id == R.id.nav_statistics) {
+
+            statisticsTab.setVisibility(View.VISIBLE);
+
+            fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+            fragmentTransaction.replace(R.id.fragmentHome, new statisticsFragment());
+            fragmentTransaction.commit();
+            homeScreenTitle.setImageDrawable(getDrawable(R.drawable.your_stats_title));
+
+        } else if (id == R.id.nav_aboutUs) {
+
+        } else if (id == R.id.nav_report) {
 
         }
 
@@ -100,4 +172,6 @@ public class HomeScreenActivityActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

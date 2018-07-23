@@ -4,17 +4,22 @@ package com.example.sanukumar.billsplit;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -31,6 +36,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 /**
@@ -42,10 +49,12 @@ public class addExpenseFragment extends Fragment {
     LinearLayoutManager listManager;
     expensesListAdapter listAdapter;
 
-    EditText addProductName, addCost, addFriends;
+    EditText addProductName, addCost, addFriends, addCategory;
     TextView addDate;
     ImageButton addCostButton, addCostCancelButton;
     LinearLayout addExpenseLayout;
+    CardView expenseListCard;
+
     boolean addTabHidden = true;
 
     ArrayList<DataModel> DataList;
@@ -73,6 +82,8 @@ public class addExpenseFragment extends Fragment {
         addCostButton = v.findViewById(R.id.addCostButton);
         addCostCancelButton = v.findViewById(R.id.addCostCancelButton);
         addExpenseLayout = v.findViewById(R.id.addExpenseLayout);
+        addCategory = v.findViewById(R.id.addCategory);
+        expenseListCard = v.findViewById(R.id.expenseListCard);
 
         DataList = new ArrayList<>(0);
 
@@ -154,6 +165,7 @@ public class addExpenseFragment extends Fragment {
                     expandAddExpense();
                 } else {
                     String articleName = addProductName.getText().toString();
+                    String addCateg = addCategory.getText().toString();
                     String addCostVal = addCost.getText().toString();
                     String dateTime = addDate.getText().toString();
                     String addFriendNames = addFriends.getText().toString();
@@ -190,24 +202,45 @@ public class addExpenseFragment extends Fragment {
             }
         });
 
-
-
         return v;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if (HomeScreenActivityActivity.displayedAddExpenseForTheFirstTime) {
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    expandAddExpense();
+
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            collapseAddExpense();
+                        }
+                    }, 600);
+
+                }
+            }, 1400);
+            HomeScreenActivityActivity.displayedAddExpenseForTheFirstTime = false;
+        }
+    }
+
     private void expandAddExpense() {
-        addExpenseLayout.animate().translationYBy(Converter.pxFromDp(getActivity().getApplicationContext(),200)).setDuration(200).start();
-        expensesList.animate().translationYBy(Converter.pxFromDp(getActivity().getApplicationContext(),200)).setDuration(200).start();
-        addCostButton.animate().translationXBy(Converter.pxFromDp(getActivity().getApplicationContext(),60)).setDuration(400).start();
-        addCostCancelButton.animate().translationXBy(Converter.pxFromDp(getActivity().getApplicationContext(),-60)).setDuration(400).start();
+        addExpenseLayout.animate().translationYBy(Converter.pxFromDp(getActivity().getApplicationContext(),260)).setDuration(400).start();
+        expenseListCard.animate().translationYBy(Converter.pxFromDp(getActivity().getApplicationContext(),260)).setDuration(400).start();
+        addCostButton.animate().translationXBy(Converter.pxFromDp(getActivity().getApplicationContext(),60)).setDuration(800).start();
+        addCostCancelButton.animate().translationXBy(Converter.pxFromDp(getActivity().getApplicationContext(),-60)).setDuration(800).start();
         addTabHidden = false;
     }
 
     private void collapseAddExpense() {
-        addExpenseLayout.animate().translationYBy(Converter.pxFromDp(getActivity().getApplicationContext(),-200)).setDuration(200).start();
-        expensesList.animate().translationYBy(Converter.pxFromDp(getActivity().getApplicationContext(),-200)).setDuration(200).start();
-        addCostButton.animate().translationXBy(Converter.pxFromDp(getActivity().getApplicationContext(),-60)).setDuration(400).start();
-        addCostCancelButton.animate().translationXBy(Converter.pxFromDp(getActivity().getApplicationContext(),60)).setDuration(400).start();
+        addExpenseLayout.animate().translationYBy(Converter.pxFromDp(getActivity().getApplicationContext(),-260)).setDuration(400).start();
+        expenseListCard.animate().translationYBy(Converter.pxFromDp(getActivity().getApplicationContext(),-260)).setDuration(400).start();
+        addCostButton.animate().translationXBy(Converter.pxFromDp(getActivity().getApplicationContext(),-60)).setDuration(800).start();
+        addCostCancelButton.animate().translationXBy(Converter.pxFromDp(getActivity().getApplicationContext(),60)).setDuration(800).start();
         addTabHidden = true;
     }
 

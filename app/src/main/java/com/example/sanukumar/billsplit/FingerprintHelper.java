@@ -34,26 +34,27 @@ public class FingerprintHelper extends FingerprintManager.AuthenticationCallback
     }
     @Override
     public void onAuthenticationError(int errMsgId, CharSequence errString) {
-        Toast.makeText(context, "Authentication error\n" + errString, Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, "Authentication error\n" + errString, Toast.LENGTH_LONG).show();
     }
     @Override
     public void onAuthenticationFailed() {
-        Toast.makeText(context, "Authentication failed", Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, "Authentication failed", Toast.LENGTH_LONG).show();
     }
     @Override
     public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
-        Toast.makeText(context, "Authentication help\n" + helpString, Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, "Authentication help\n" + helpString, Toast.LENGTH_LONG).show();
     }@Override
     public void onAuthenticationSucceeded(
             FingerprintManager.AuthenticationResult result) {
 
-        Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show();
         onAuthSuccess();
 
     }
     private void onAuthSuccess() {
         context.startActivity(new Intent(context, HomeScreenActivityActivity.class));
         ((AppCompatActivity) context).finish();
+        System.out.println("After");
 
 
 }}

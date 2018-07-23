@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -43,6 +44,11 @@ class expensesListAdapter extends RecyclerView.Adapter<expensesListAdapter.ViewH
         holder.name.setText(DataList.get(position).getArticleName());
         holder.friendCount.setText(DataList.get(position).getFriends());
         holder.itemAmount.setText(DataList.get(position).getCost());
+
+        setAnimation(holder.name, position);
+        setAnimation(holder.friendCount, position);
+        setAnimation(holder.itemAmount, position);
+        lastPosition = position;
     }
 
 
@@ -50,5 +56,17 @@ class expensesListAdapter extends RecyclerView.Adapter<expensesListAdapter.ViewH
     public int getItemCount() {
         return DataList.size();
     }
+
+    private int lastPosition = -1;
+
+    private void setAnimation(View viewToAnimate, int position) {
+        // If the bound view wasn't previously displayed on screen, it's animated
+        if (position > lastPosition) {
+            AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
+            anim.setDuration(400);//to make duration random number between [0,501)
+            viewToAnimate.startAnimation(anim);
+        }
+    }
+
 
 }

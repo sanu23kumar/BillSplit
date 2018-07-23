@@ -6,7 +6,7 @@
     tools:context=".AddFriendFragment"
     android:clickable="true"
     android:focusableInTouchMode="true"
-    android:background="#fff">
+    android:background="#00bbee">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -19,36 +19,34 @@
 
 
         <LinearLayout
-            android:id="@+id/addExpenseLayout"
+            android:id="@+id/addFriendLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="-220dp"
+            android:layout_marginTop="-230dp"
             android:paddingTop="20dp"
             android:background="@color/colorPrimary">
 
             <EditText
-                style="@style/TextField"
+                style="@style/emptyText"
                 android:id="@+id/addFriendName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Friend Name"/>
             <EditText
-                style="@style/TextField"
+                style="@style/emptyText"
                 android:id="@+id/addFriendPhoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"/>
             <EditText
-                style="@style/TextField"
+                style="@style/emptyText"
                 android:id="@+id/addFriendEmailAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:hint="Email Address"
-                android:clickable="true"
-                android:focusableInTouchMode="false"/>
+                android:hint="Email Address"/>
             <EditText
-                style="@style/TextField"
+                style="@style/emptyText"
                 android:id="@+id/addFriendNickName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,9 +54,9 @@
 
             <ImageButton
                 android:id="@+id/addFriendCancelButton"
+                android:src="@drawable/add_expense_cancel_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/add_expense_cancel_button"
                 android:layout_margin="20dp"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"/>
@@ -66,9 +64,9 @@
             <ImageButton
                 android:id="@+id/addFriendButton"
                 android:layout_width="wrap_content"
+                android:src="@drawable/add_button"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-66dp"
-                android:src="@drawable/add_expense_button"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"/>
 
@@ -76,14 +74,33 @@
         </LinearLayout>
 
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/friendsList"
+        <android.support.v7.widget.CardView
+            android:id="@+id/friendsListCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:reverseLayout="true"
-            app:stackFromEnd="true">
+            app:cardCornerRadius="12dp"
+            android:background="#fff"
+            android:layout_marginBottom="-10dp"
+            app:cardElevation="0dp"
+            android:padding="20dp">
 
-        </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/friendsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:reverseLayout="true"
+                    app:stackFromEnd="true">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 

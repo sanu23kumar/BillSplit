@@ -6,7 +6,7 @@
     tools:context="com.example.sanukumar.billsplit.addExpenseFragment"
     android:clickable="true"
     android:focusableInTouchMode="true"
-    android:background="#fff">
+    android:background="@color/colorPrimary">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -17,30 +17,37 @@
         android:clickable="true"
         android:focusableInTouchMode="true" >
 
-
         <LinearLayout
             android:id="@+id/addExpenseLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-280dp"
             android:orientation="vertical"
-            android:layout_marginTop="-220dp"
             android:paddingTop="20dp"
             android:background="@color/colorPrimary">
 
             <EditText
-                style="@style/TextField"
+                style="@style/emptyText"
                 android:id="@+id/addProductName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Article Name"/>
+
             <EditText
-                style="@style/TextField"
+                style="@style/emptyText"
+                android:id="@+id/addCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Add Category"/>
+
+            <EditText
+                style="@style/emptyText"
                 android:id="@+id/addCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Cost"/>
             <TextView
-                style="@style/TextField"
+                style="@style/emptyText"
                 android:id="@+id/addDate"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -48,7 +55,7 @@
                 android:clickable="true"
                 android:focusableInTouchMode="false"/>
             <EditText
-                style="@style/TextField"
+                style="@style/emptyText"
                 android:id="@+id/addFriends"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,9 +65,9 @@
                 android:id="@+id/addCostCancelButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/add_expense_cancel_button"
                 android:layout_margin="20dp"
                 android:layout_gravity="center"
+                android:src="@drawable/add_expense_cancel_button"
                 android:background="@android:color/transparent"/>
 
             <ImageButton
@@ -68,22 +75,41 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-66dp"
-                android:src="@drawable/add_expense_button"
                 android:layout_gravity="center"
+                android:src="@drawable/add_button"
                 android:background="@android:color/transparent"/>
 
 
         </LinearLayout>
 
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/expensesList"
+        <android.support.v7.widget.CardView
+            android:id="@+id/expenseListCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:reverseLayout="true"
-            app:stackFromEnd="true">
+            app:cardCornerRadius="12dp"
+            android:background="#fff"
+            android:layout_marginBottom="-10dp"
+            app:cardElevation="30dp">
 
-        </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/expensesList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:reverseLayout="true"
+                    app:stackFromEnd="true">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
 
     </LinearLayout>
 
